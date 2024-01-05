@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <title>Iris Dataset Classification</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <H1>Iris Dataset Classification Predictor</H1>
+    <div class="form-container">
+        <form action='/predict' method="POST">
+            <label for="sepal_length">Sepal Length:</label>
+            <input type='text' name='sepal_length'><br>
+
+            <label for="sepal_width">Sepal width</label>
+            <input type='text' name='sepal_width'><br>
+
+            <label for="petal_length">Petal Length: </label>
+            <input type='text' name='petal_length'><br>
+
+            <label for="petal_width">Petal Width: </label>
+            <input type='text' name='petal_width'><br>
+
+            <div id="result">
+                Class: {{result}} <br>
+            </div>
+            <input type='submit' value='Predict' id="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
